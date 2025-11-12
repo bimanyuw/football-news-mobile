@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/widgets/left_drawer.dart';
 import 'package:football_news/screens/newslist_form.dart';
-import 'package:football_news/widgets/news_list.dart'; // halaman baru (lihat bagian 3)
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -110,19 +109,12 @@ class ItemCard extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!")));
 
-          // Tambah navigasi sesuai instruksi tutorial
           if (item.name == "Add News") {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (_) => const NewsFormPage()),
             );
-          } else if (item.name == "See Football News") {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const NewsListPage()),
-            );
           } else if (item.name == "Logout") {
-            // opsional: tampilkan dialog konfirmasi logout
           }
         },
         child: Padding(

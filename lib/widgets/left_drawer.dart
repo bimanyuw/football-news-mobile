@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
-import 'package:football_news/screens/newslist_form.dart';
-import 'package:football_news/widgets/news_list.dart';
+import 'package:football_news/screens/newslist_form.dart';     
+import 'package:football_news/screens/news_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -29,33 +29,38 @@ class LeftDrawer extends StatelessWidget {
               ],
             ),
           ),
+
+          // Home
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const MyHomePage()),
+                MaterialPageRoute(builder: (context) => MyHomePage()),
               );
             },
           ),
+
+          // Add News (form)
           ListTile(
             leading: const Icon(Icons.post_add),
             title: const Text('Add News'),
             onTap: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => const NewsFormPage()),
+                MaterialPageRoute(builder: (context) => NewsFormPage()),
               );
             },
           ),
+          // News Entry List (kalau kamu masih pakai halaman ini juga)
           ListTile(
-            leading: const Icon(Icons.newspaper),
-            title: const Text('See News'),
+            leading: const Icon(Icons.list_alt),
+            title: const Text('News Entry List'),
             onTap: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const NewsListPage()),
+                MaterialPageRoute(builder: (context) => const NewsEntryListPage()),
               );
             },
           ),
